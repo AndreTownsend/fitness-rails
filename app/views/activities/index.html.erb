@@ -1,0 +1,59 @@
+<style>
+  .click{
+    cursor: pointer;
+  }
+  .card:hover{
+    box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+  }
+    .col-sm{
+      min-width: 20%;
+      max-width: 20%;
+      margin-top: 30px;
+    }
+</style>
+<section class="content" >
+<div class="container" style="">
+
+  <% if flash[:notice] %>
+    <input type="hidden" id="flash_notice" value="<%= flash[:notice] %>" class="messages notice">
+    <%= javascript_tag " alert($('#flash_notice').val()) " %>
+  <% end %>
+
+<h2>My Activities <%= link_to 'New Activity', new_activity_path,class: "pull-right btn btn-primary" %>
+</h2>
+
+  <div class="row">
+  <% @activities.each do |activity| %>
+
+  <div id = "e" class="col-sm click" value="3">
+    <%= link_to  activity do %>
+
+  <div class="card card-stats">
+        <div class="card-body text-center" style="height: 150px;">
+          <div class="text-center">
+              <div class="">
+                <img src="<%= asset_path activity.name %>">
+              </div>
+          </div>
+          <h4><%= activity.name %></h4>
+        </div>
+      </div>
+    </div>
+      <%end %>
+    <%end %>
+
+  </div>
+<br>
+</div>
+</section>
+<section id="intro" class="section intro">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h3>Boost your Healt and Life</h3>
+      <p>For some people, putting in the hard work that it takes to stay fit is as natural as sleeping, eating, and breathing—it's a necessary part of their life.So when you don't feel like you can finish another rep, or when you just don't want to get up for that 5 a.m. wakeup call, just remember these words of wisdom from some of the fittest men who have ever walked the earth</p>
+    </div>
+  </div>
+</section>
+
+<script>
+</script>

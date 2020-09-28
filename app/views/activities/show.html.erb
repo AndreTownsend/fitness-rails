@@ -1,0 +1,46 @@
+
+
+
+
+<section class="content">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="  align-self-center " style="width: 40%;">
+        <div class="card card-signin flex-row my-5">
+          <div class=" d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body text-center">
+            <h3 class=" text-center">Show Activity</h3>
+
+            <img src="<%= asset_path @activity.name %>">
+            <p id="notice"><%= notice %></p>
+<div>
+            <p>
+              <strong>Name:</strong>
+              <%= @activity.name %>
+            </p>
+
+            <p>
+              <strong>Date:</strong>
+              <%= @activity.date %>
+            </p>
+
+            <p>
+              <strong>Duration:</strong>
+              <%= seconds_to_hms(@activity.duration) %>
+            </p>
+</div>
+            <%= link_to 'Edit', edit_activity_path(@activity),class: "btn btn-primary" %> |
+            <%= link_to 'Destroy', activity_path, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-primary"%>|
+            <%= link_to 'Back', activities_path,class: "btn btn-primary" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

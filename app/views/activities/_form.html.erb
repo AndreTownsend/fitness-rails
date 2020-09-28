@@ -1,0 +1,69 @@
+
+
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="  align-self-center " style="width: 40%;">
+      <div class="card card-signin flex-row my-5">
+        <div class=" d-none d-md-flex">
+          <!-- Background image for card set in CSS! -->
+        </div>
+        <div class="card-body">
+            <h3 class=" text-center">New Activity</h3>
+            <%= form_with(model: activity, local: true) do |form| %>
+              <% if activity.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+                  <ul>
+                    <% activity.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="form-group">
+                <%= form.label :name %>
+                <select class="form-control" name="activity[name]" id="exampleFormControlSelect1" required>
+                  <option value="">Select activity</option>
+                  <option>Walking</option>
+                  <option>Hiking</option>
+                  <option>Cycling</option>
+                  <option>Rowing</option>
+                  <option>Running</option>
+                  <option>Swimming</option>
+                  <option>Strength Training</option>
+                  <option>Situps</option>
+                  <option>Pushups</option>
+                  <option>Mountain Biking</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <%= form.label :date %>
+                <%= form.date_select :date,required: true,class:"form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= form.label :duration %><br>
+               <span>Hours</span> <input type="number" name="hh" class="mr-5 " maxlength="60" required>                <span>Min</span> <input type="number" name="mm" maxlength="60" required>
+
+              </div>
+
+              <div class="actions">
+                <%= form.submit class:"btn btn-primary" %>
+
+                <%= link_to 'Back', activities_path ,class: "pull-right mt-5"%>
+              </div>
+            <% end %>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

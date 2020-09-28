@@ -1,0 +1,19 @@
+<header id="header" style="top: 0px; ">
+  <div class="header-content clearfix"> <span class="logo"><a href="/" class="mb-5">FITNESS</a></span>
+    <nav class="navigation" role="navigation">
+      <ul class="primary-nav">
+        <li><a href="/activities">My Activicies</a></li>
+        <li><a href="#intro">About</a></li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+              <span>
+                Sign Out
+                <i class="fa fa-sign-out"></i>
+              </span>
+          <% end %>
+        </li>
+
+      </ul>
+    </nav>
+    <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+</header>

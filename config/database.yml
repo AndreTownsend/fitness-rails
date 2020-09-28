@@ -1,0 +1,12 @@
+
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5433
+  database: fitness
+  pool: 5
+  username: postgres
+  password: 08newthing
+
